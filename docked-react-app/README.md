@@ -30,3 +30,13 @@ Fire up the container:
 
 Stop the container:
 `docker-compose stop`
+
+## How to run it - Method 3 (Production Mode)
+
+Build the image with:
+`docker build -f Dockerfile.prod -t docked-app:prod .`
+
+Then run it with:
+`docker run -it --rm -p 1337:80 docked-app:prod`
+
+Open [http://localhost:80](http://localhost:80) to view it in the browser.
