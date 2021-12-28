@@ -22,16 +22,19 @@ As we can see, this is a development version of the docked app. The source is at
 
 A docker-compose.yml file is present so you can have the confort of only (from the base folder of this repo):
 
-Build the image:
-`docker-compose up -d --build`
-
-Fire up the container:
+Build the image and fireup the container with:
 `docker-compose up -d --build`
 
 Stop the container:
 `docker-compose stop`
 
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
+
 ## How to run it - Method 3 (Production Mode)
+
+In the production mode, we want to serve the artifact (the project build with static files). Inside Dockerfile.prod is possible to see that first a temporary container is fired only for building the artifact, later another container is created with nginx server and the build is copied in order to be served.
+
+Note that the nginx.conf file and its COPY line inside the Dockerfile.prod is only needed if using React Router.
 
 Build the image with:
 `docker build -f Dockerfile.prod -t docked-app:prod .`
