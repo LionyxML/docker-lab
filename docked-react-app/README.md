@@ -40,3 +40,10 @@ Then run it with:
 `docker run -it --rm -p 1337:80 docked-app:prod`
 
 Open [http://localhost:80](http://localhost:80) to view it in the browser.
+
+## How to run it - Method 4 (Production Mode)
+
+Using the provided docker-compose.yml build and fireup with:
+`docker-compose -f docker-compose.prod.yml up -d --build`
+
+Open [http://localhost:1337](http://localhost:1337) to view it in the browser.
